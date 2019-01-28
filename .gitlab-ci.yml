@@ -3,11 +3,11 @@ stages:
   - test
   - deploy
 image: jagestah/resroulette:latest
-job 1:
+Init and plan Terraform:
   stage: build
   script:
-    - terraform init
-    - terraform plan
+    - ./infra/terraform init
+    - ./infra/terraform plan
 # job 2:
 #   stage: test
 #   script: echo "Job 2"
