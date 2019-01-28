@@ -10,7 +10,7 @@ Init and plan Terraform:
     - cd infra
     - terraform init
     - terraform plan -out=terraform.plan
-cache:
+artifacts:
   paths:
     - infra/terraform.plan
 # job 2:
