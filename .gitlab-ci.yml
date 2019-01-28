@@ -25,7 +25,7 @@ Init and plan Terraform:
 job 3:
   stage: deploy
   when: on_success
-  only:
-    changes:
-      - infra/*
+  # only:
+  #   changes:
+  #     - infra/*
   script: cat infra/terraform.plan
