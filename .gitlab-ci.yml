@@ -3,7 +3,7 @@ stages:
   - test
   - deploy
 image: jagestah/resroulette:latest
-Init and plan Terraform:
+Init and Plan Terraform:
   stage: build
   script:
     - ls
@@ -22,9 +22,9 @@ Init and plan Terraform:
 #   only:
 #     - master@Jagestah/ResRoulette
 #   script: echo "This is where we push to Dockerhub"
-job 3:
+Apply Terraform Plan:
   stage: deploy
-  when: on_success
+  when: manual
   only:
     - master@Jagestah/ResRoulette
-  script: cat infra/terraform.plan
+  script: terraform apply infra/terraform.plan
