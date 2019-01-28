@@ -5,10 +5,12 @@ stages:
 image: jagestah/resroulette:latest
 job 1:
   stage: build
-  script: echo "job 1"
-job 2:
-  stage: test
-  script: echo "Job 2"
+  script:
+    - terraform init
+    - terraform plan
+# job 2:
+#   stage: test
+#   script: echo "Job 2"
 Push to Docker:
   stage: deploy
   when: on_success
