@@ -1,4 +1,5 @@
 # ResRoulette
+
 #### Goals:
 - Containerized architecture using Docker
 - Proper CI/CD implemented using Gitlab
