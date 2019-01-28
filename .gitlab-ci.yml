@@ -9,7 +9,11 @@ Init and plan Terraform:
     - ls
     - cd infra
     - terraform init
-    - terraform plan
+    - terraform plan -out=terraform.plan
+cache:
+  script: cache terraform.plan
+  paths:
+    - infra/terraform.plan
 # job 2:
 #   stage: test
 #   script: echo "Job 2"
