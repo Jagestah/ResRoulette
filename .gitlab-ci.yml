@@ -27,4 +27,6 @@ Apply Terraform Plan:
   when: manual
   only:
     - master@Jagestah/ResRoulette
-  script: terraform apply infra/terraform.plan
+  script:
+    - terraform init
+    - terraform apply infra/terraform.plan
