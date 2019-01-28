@@ -7,7 +7,7 @@ Init and plan Terraform:
   stage: build
   script:
     - ls
-    - cd app/infra
+    - cd infra
     - terraform init
     - terraform plan
 # job 2:
