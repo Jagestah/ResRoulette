@@ -7,21 +7,21 @@ Init and plan Terraform:
   stage: build
   script:
     - ls
-    # - cd /app/infra
-    # - terraform init
-    # - terraform plan
+    - cd app/infra
+    - terraform init
+    - terraform plan
 # job 2:
 #   stage: test
 #   script: echo "Job 2"
-Push to Docker:
-  stage: deploy
-  when: on_success
-  only:
-    - master@Jagestah/ResRoulette
-  script: echo "This is where we push to Dockerhub"
-job 3:
-  stage: deploy
-  when: on_success
-  only:
-    - master@Jagestah/ResRoulette
-  script: echo "This script only runs on master branch"
+# Push to Docker:
+#   stage: deploy
+#   when: on_success
+#   only:
+#     - master@Jagestah/ResRoulette
+#   script: echo "This is where we push to Dockerhub"
+# job 3:
+#   stage: deploy
+#   when: on_success
+#   only:
+#     - master@Jagestah/ResRoulette
+#   script: echo "This script only runs on master branch"
