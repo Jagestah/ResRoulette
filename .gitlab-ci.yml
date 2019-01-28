@@ -6,8 +6,9 @@ image: jagestah/resroulette:latest
 Init and plan Terraform:
   stage: build
   script:
-    - ./infra/terraform init
-    - ./infra/terraform plan
+    - cd /app/infra
+    - terraform init
+    - terraform plan
 # job 2:
 #   stage: test
 #   script: echo "Job 2"
