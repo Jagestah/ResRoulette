@@ -10,9 +10,9 @@ Init and plan Terraform:
     - cd infra
     - terraform init
     - terraform plan -out=terraform.plan
-artifacts:
-  paths:
-    - infra/terraform.plan
+  artifacts:
+    paths:
+      - infra/terraform.plan
 # job 2:
 #   stage: test
 #   script: echo "Job 2"
@@ -22,9 +22,10 @@ artifacts:
 #   only:
 #     - master@Jagestah/ResRoulette
 #   script: echo "This is where we push to Dockerhub"
-# job 3:
-#   stage: deploy
-#   when: on_success
-#   only:
-#     - master@Jagestah/ResRoulette
-#   script: echo "This script only runs on master branch"
+job 3:
+  stage: deploy
+  when: on_success
+  only:
+    changes:
+      - infra/*
+  script: cat infra/terraform.plan
